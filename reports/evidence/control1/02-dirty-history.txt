@@ -1,0 +1,5 @@
+$ git log --oneline -4
+39d1157 fix: typo in phone validation docstring
+5cecc87 wip: start INN validation
+0f0aacb test: add phone validation tests
+253bca0 feat: add phone validation function

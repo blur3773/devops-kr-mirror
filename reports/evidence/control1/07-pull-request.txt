@@ -1,0 +1,5 @@
+$ gh pr view 1
+PR #1: feat: add phone validation
+Состояние: MERGED
+Merge commit: 059a8160538ab00b0af6d471915be835eda1c08e
+URL: https://github.com/blur3773/devops-kr-template/pull/1

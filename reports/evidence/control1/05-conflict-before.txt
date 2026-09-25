@@ -1,0 +1,44 @@
+$ git merge upstream/feature/instructor-change
+CONFLICT (modify/delete): test/test_validator.py deleted in HEAD and modified in upstream/feature/instructor-change.  Version upstream/feature/instructor-change of test/test_validator.py left in tree.
+Auto-merging validator.py
+CONFLICT (content): Merge conflict in validator.py
+Automatic merge failed; fix conflicts and then commit the result.
+
+$ git status --short
+DU test/test_validator.py
+UU validator.py
+
+$ sed -n '1,24p' validator.py
+<<<<<<< HEAD
+def validate_phone(phone: str) -> bool:
+    """Валидация российского номера телефона."""
+    import re
+    pattern = r'^\+?7\d{10}$'
+    return bool(re.match(pattern, phone.replace('-', '').replace(' ', '')))
+
+
+# validator.py
+def validate_email(email: str) -> bool:
+    """Валидация email-адреса."""
+    import re
+    pattern = r'^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$'
+    return bool(re.match(pattern, email))
+
+=======
+# validator.py
+def validate_email(email: str) -> bool:
+    """Валидация email-адреса."""
+    import re
+    pattern = r'^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$'
+    return bool(re.match(pattern, email))
+
+
+
+$ tail -n 7 validator.py
+    elif calculated % 101 == 100:
+        expected = 0
+    else:
+        expected = calculated % 101
+    
+    return expected == check_sum
+>>>>>>> upstream/feature/instructor-change

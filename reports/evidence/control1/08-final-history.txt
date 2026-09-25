@@ -1,0 +1,10 @@
+$ git log --oneline --graph --decorate -5
+* 059a816 (HEAD -> main, origin/main, origin/HEAD, mirror/main, mirror/HEAD) feat: add phone validation (#1)
+* 1341ed3 (upstream/master, upstream/HEAD) fix: fix validator
+* 5ed82d1 test: add tests
+* 501ef91 Create: new_file
+* b4d4305 Create: validator.py
+
+$ python3 -m pytest -q
+...                                                                      [100%]
+3 passed in 0.05s
